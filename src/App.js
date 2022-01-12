@@ -1,4 +1,4 @@
- import './App.css';
+import './App.css';
 import { ItemList } from './components/ItemList'
 import { useContext, useState } from 'react';
 import { Context } from './context/MyContext';
@@ -11,7 +11,7 @@ import { Context } from './context/MyContext';
 function App() {
   const [currentTitle, setCurrentTitle] = useState("")
 
-  const { dispatch } = useContext(Context)
+  const { dispatch, state } = useContext(Context)
 
   const handleEdit_Title = () => {
     // if current is false, toggle
@@ -46,9 +46,8 @@ function App() {
 
       <main>
         <div>
-          <h4> Item list</h4>
-        </div>
-        <ItemList />
+         </div>
+        <ItemList data={[]} />
       </main>
     </div>
   );

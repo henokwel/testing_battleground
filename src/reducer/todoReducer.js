@@ -25,8 +25,9 @@ export const todoReducer = (state, action) => {
             break;
 
         case "remove":
-            return state.filter(item => item.id !== action.payload.id)
+            return state.filter(item => item.id !== action.payload)
             break;
+            
 
         case "done": {
             console.log("type", action.type);
@@ -42,7 +43,7 @@ export const todoReducer = (state, action) => {
                 // } else {
                 //     return item;
                 // };
-                
+
                 if (item.id === action.payload.id) {
                     item.done = action.payload.done
                 }

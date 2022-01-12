@@ -19,10 +19,19 @@ describe('todoReducer', () => {
         const value = { id: 1, done: true }
         const res = todoReducer(data, { type: "done", payload: value })
         console.log(res);
+        console.log(data);
+        
 
         expect(res).toEqual(data)
-
     })
+
+    test('should remove item', () => {
+
+        const value = 1
+        const res = todoReducer(data, { type: "remove", payload: value })
+        expect(res).toEqual([data[1], data[2]])
+    })
+
 
 
 

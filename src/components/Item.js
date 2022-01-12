@@ -5,6 +5,7 @@ export const Item = ({ id, title, done }) => {
 
     const { dispatch } = useContext(Context)
 
+
     const [edit, setEdit] = useState(false)
     const [currentTitle, setCurrentTitle] = useState(title)
     const [currentDone, setCurrentDone] = useState(done)
@@ -18,14 +19,19 @@ export const Item = ({ id, title, done }) => {
         setCurrentTitle(value)
     }
 
+
+    const handleRemoveItem = (id) => {
+
+        dispatch({ type: "remove", payload: id })
+
+
+    }
     const handleEdit_Title = (id) => {
         // if current is false, toggle
         if (!edit) {
             setEdit(!edit)
         } else {
             // if current is true, compare and disptach
-            console.log(id);
-
             if (currentTitle === title || currentTitle.trim() === "") return setEdit(false)
 
 
@@ -48,8 +54,9 @@ export const Item = ({ id, title, done }) => {
 
 
     return (
-        <div key={id} className='item' onSubmit={(e) => e.preventDefault()}>
+        <div className='item' onSubmit={(e) => e.preventDefault()}>
 
+            {/* <button onClick={() => handleRemoveItem(id)}>X</button> */}
             {
                 !edit ?
                     <p>{currentTitle}</p>
@@ -60,6 +67,7 @@ export const Item = ({ id, title, done }) => {
             <div className='item_btn_Container'>
                 <input type="checkbox" checked={currentDone} onChange={() => handleEdit_Done(id)} />
                 <button onClick={() => handleEdit_Title(id)}>{edit ? "Done" : "Edit"}</button>
+                <button onClick={() => handleRemoveItem(id)}>Remove</button>
             </div>
 
         </div>
