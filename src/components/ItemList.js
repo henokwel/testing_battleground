@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Item } from '../components/Item'
-export const ItemList = ({data}) => {
-    console.log(data);
-    
+import { Context } from '../context/MyContext'
+
+
+
+export const ItemList = () => {
+    const { state } = useContext(Context)
+
+
     return (
-        <div className='itemList'>
+        <div className='itemList' >
 
             {
-                !data? <p>No Data</p> :
-                    data.map(item => <Item {...item} />)
+                !state ? <p>No Data</p> :
+                    state.map((item, index) => <Item key={index}  {...item} />)
             }
         </div>
     )
