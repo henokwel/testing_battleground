@@ -1,12 +1,8 @@
-import React, { useContext, useState } from 'react'
-import { Context, useMyContext } from '../context/MyContext'
+import React, { useState } from 'react'
+import { useMyContext } from '../context/MyContext'
 
 export const Item = ({ id, title, done }) => {
-
-    // const { dispatch } = useContext(Context)
     const { dispatch } = useMyContext()
-
-
     const [edit, setEdit] = useState(false)
     const [currentTitle, setCurrentTitle] = useState(title)
     const [currentDone, setCurrentDone] = useState(done)
@@ -15,18 +11,14 @@ export const Item = ({ id, title, done }) => {
         const target = e.target
         const value = target.value
         console.log(value);
-
         // if (!value || value === title) return
         setCurrentTitle(value)
     }
 
-
     const handleRemoveItem = (id) => {
-
         dispatch({ type: "remove", payload: id })
-
-
     }
+
     const handleEdit_Title = (id) => {
         // if current is false, toggle
         if (!edit) {
@@ -34,11 +26,8 @@ export const Item = ({ id, title, done }) => {
         } else {
             // if current is true, compare and disptach
             if (currentTitle === title || currentTitle.trim() === "") return setEdit(false)
-
-
             dispatch({ type: "edit", payload: { id, title: currentTitle } })
             setEdit(!edit)
-
         }
     }
 

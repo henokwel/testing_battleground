@@ -16,13 +16,15 @@ describe('Item', () => {
         // const disptach = jest.fn()
         const wrapper = shallow(
             <Item {...data[0]} />,
-            
-            { wrappingComponent: MyProvider, }
+
+            { wrappingComponent: MyProvider }
         )
 
         expect(wrapper).toMatchSnapshot()
-
     })
+
+
+    // test the crud fn and simulate action
 
 
 })
