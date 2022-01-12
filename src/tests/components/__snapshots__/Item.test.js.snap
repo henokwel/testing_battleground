@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item should render item with data 1`] = `
+<div
+  className="item"
+  onSubmit={[Function]}
+>
+  <p>
+    One
+  </p>
+  <div
+    className="item_btn_Container"
+  >
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;

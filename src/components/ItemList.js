@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { Item } from '../components/Item'
-import { Context } from '../context/MyContext'
 
 
 

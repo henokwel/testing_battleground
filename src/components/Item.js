@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { Context } from '../context/MyContext'
+import { Context, useMyContext } from '../context/MyContext'
 
 export const Item = ({ id, title, done }) => {
 
-    const { dispatch } = useContext(Context)
+    // const { dispatch } = useContext(Context)
+    const { dispatch } = useMyContext()
 
 
     const [edit, setEdit] = useState(false)

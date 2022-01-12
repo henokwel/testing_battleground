@@ -9,7 +9,7 @@ describe('ItemList', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    test('should render itemlist with ', () => {
+    test('should render itemlist with', () => {
         const wrapper = shallow(<ItemList data={data} />)
         expect(wrapper).toMatchSnapshot()
     })

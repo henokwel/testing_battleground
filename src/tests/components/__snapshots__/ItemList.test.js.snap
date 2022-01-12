@@ -10,7 +10,7 @@ exports[`ItemList should render itemList with no data 1`] = `
 </div>
 `;
 
-exports[`ItemList should render itemlist with  1`] = `
+exports[`ItemList should render itemlist with 1`] = `
 <div
   className="itemList"
 >

@@ -47,7 +47,7 @@ function App() {
       <main>
         <div>
          </div>
-        <ItemList data={[]} />
+        <ItemList data={state} />
       </main>
     </div>
   );

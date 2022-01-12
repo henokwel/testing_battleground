@@ -10,8 +10,7 @@ export const todoReducer = (state, action) => {
             break;
 
         case "edit": {
-            console.log("type", action.type);
-            console.log("payload Edit", action.payload);
+ 
 
             const newStat = state.map(item => {
                 if (item.id === action.payload.id) {
@@ -30,9 +29,6 @@ export const todoReducer = (state, action) => {
             
 
         case "done": {
-            console.log("type", action.type);
-            console.log("payload", action.payload);
-
             return state.map(item => {
 
                 // if (item.id === action.payload.id) {
