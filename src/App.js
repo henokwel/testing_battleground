@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+ import './App.css';
 import { ItemList } from './components/ItemList'
 import { useContext, useState } from 'react';
 import { Context } from './context/MyContext';

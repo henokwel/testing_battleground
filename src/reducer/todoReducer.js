@@ -3,7 +3,6 @@ export const todoReducer = (state, action) => {
 
     switch (action.type) {
         case "add":
-            console.log("add");
             return [
                 ...state,
                 action.payload
@@ -12,7 +11,7 @@ export const todoReducer = (state, action) => {
 
         case "edit": {
             console.log("type", action.type);
-            console.log("payload", action.payload);
+            console.log("payload Edit", action.payload);
 
             const newStat = state.map(item => {
                 if (item.id === action.payload.id) {
@@ -33,14 +32,23 @@ export const todoReducer = (state, action) => {
             console.log("type", action.type);
             console.log("payload", action.payload);
 
-            const newStat = state.map(item => {
+            return state.map(item => {
+
+                // if (item.id === action.payload.id) {
+                //     return {
+                //         ...item,
+                //         ...action.payload.done
+                //     };
+                // } else {
+                //     return item;
+                // };
+                
                 if (item.id === action.payload.id) {
                     item.done = action.payload.done
                 }
                 return item
             })
 
-            return state = newStat
         }
 
         default:
