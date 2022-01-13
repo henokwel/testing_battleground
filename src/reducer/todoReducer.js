@@ -3,6 +3,7 @@ export const todoReducer = (state, action) => {
 
     switch (action.type) {
         case "add":
+            console.log('Add red :', action.payload);
             return [
                 ...state,
                 action.payload
@@ -10,7 +11,8 @@ export const todoReducer = (state, action) => {
             break;
 
         case "edit": {
- 
+
+            console.log('Edit red :', action.payload);
 
             const newStat = state.map(item => {
                 if (item.id === action.payload.id) {
@@ -24,11 +26,13 @@ export const todoReducer = (state, action) => {
             break;
 
         case "remove":
+            console.log('Remove red :', action.payload);
             return state.filter(item => item.id !== action.payload)
             break;
-            
+
 
         case "done": {
+            console.log('Done red :', action.payload);
             return state.map(item => {
 
                 // if (item.id === action.payload.id) {
@@ -49,6 +53,7 @@ export const todoReducer = (state, action) => {
         }
 
         default:
+            return state
             break;
 
     }

@@ -33,20 +33,13 @@ export const Item = ({ id, title, done }) => {
 
     const handleEdit_Done = (id) => {
         // if current is false, toggle
-
-
         dispatch({ type: "done", payload: { id, done: !currentDone } })
-
         setCurrentDone(!currentDone)
     }
 
-
-
-
+    // onSubmit={(e) => e.preventDefault()}
     return (
-        <div className='item' onSubmit={(e) => e.preventDefault()}>
-
-            {/* <button onClick={() => handleRemoveItem(id)}>X</button> */}
+        <div className='item'  >            
             {
                 !edit ?
                     <p>{currentTitle}</p>

@@ -3,7 +3,6 @@
 exports[`Item should render item with data 1`] = `
 <div
   className="item"
-  onSubmit={[Function]}
 >
   <p>
     One
@@ -20,6 +19,66 @@ exports[`Item should render item with data 1`] = `
       onClick={[Function]}
     >
       Edit
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Item should toggle edit mode 1`] = `
+<div
+  className="item"
+>
+  <p>
+    One
+  </p>
+  <div
+    className="item_btn_Container"
+  >
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Item should toggle edit mode 2`] = `
+<div
+  className="item"
+>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="One"
+  />
+  <div
+    className="item_btn_Container"
+  >
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Done
     </button>
     <button
       onClick={[Function]}
