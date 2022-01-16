@@ -27,13 +27,11 @@ describe('Item', () => {
             { wrappingComponent: MyProvider }
         )
 
-
         // edit init state should be false
         expect(wrapper).toMatchSnapshot()
         expect(wrapper.find("button").at(0).text()).toBe("Edit")
 
         // edit  state should be true after click
-
         wrapper.find("button").at(0).simulate("click")
         expect(wrapper).toMatchSnapshot()
         expect(wrapper.find("button").at(0).text()).toBe("Done")
@@ -83,11 +81,11 @@ describe('Item', () => {
 
 
         // disptach change, aka toggle  Edit, now Done btn
+
         // wrapper.find("button").at(0).simulate("click")
         // expect(wrapper.context().dispatc)
         // expect(wrapper.find("button").at(0)).toHaveBeenCalled()
         // expect(wrapper.find("button").at(0).text()).toBe("Edit")
-
         // expect(dispatch).toHaveBeenLastCalledWith(dispatchValue)
         // expect(dispatch).toHaveBeenCalled()
     })
@@ -106,8 +104,6 @@ describe('Item', () => {
     //         }
     //     })
     // })
-
-
 
 })
 

@@ -37,7 +37,6 @@ export const Item = ({ id, title, done }) => {
         setCurrentDone(!currentDone)
     }
 
-    // onSubmit={(e) => e.preventDefault()}
     return (
         <div className='item'  >            
             {
